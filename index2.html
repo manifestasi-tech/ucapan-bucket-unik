@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ucapan Wisuda</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #1d3557, #457b9d);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .card {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .card h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #f1faee;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .card p {
+        font-size: 1.2rem;
+        color: #e9ecef;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Confetti */
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        top: -10px;
+        opacity: 0.7;
+        animation: fall 4s linear infinite;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(0) rotate(0);
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Selamat Wisuda! 🎓</h1>
+      <p>
+        Hari ini bukan akhir perjalanan,<br />
+        tapi awal dari kisah baru penuh harapan.<br />
+        Semoga langkahmu selalu penuh cahaya dan keberhasilan. ✨
+      </p>
+    </div>
+
+    <script>
+      // Confetti generator
+      function createConfetti() {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        document.body.appendChild(confetti);
+
+        const size = Math.random() * 8 + 5 + "px";
+        confetti.style.width = size;
+        confetti.style.height = size;
+
+        const colors = ["#ff6b6b", "#feca57", "#54a0ff", "#5f27cd", "#1dd1a1"];
+        confetti.style.backgroundColor =
+          colors[Math.floor(Math.random() * colors.length)];
+
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+        setTimeout(() => {
+          confetti.remove();
+        }, 5000);
+      }
+
+      setInterval(createConfetti, 150);
+    </script>
+  </body>
+</html>

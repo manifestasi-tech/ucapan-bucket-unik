@@ -1,0 +1,101 @@
+body {
+  background: #131b21;
+}
+
+/* .container {
+  width: 50%;
+  margin: 0 auto;
+} */
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  top: -10px;
+  opacity: 0.7;
+  animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.item {
+  position: absolute;
+  width: 400px;
+}
+
+.item h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #f1faee;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.item p {
+  font-size: 1.2rem;
+  color: #e9ecef;
+  text-align: center;
+}
+
+svg#flower-frame {
+  height: 90vh;
+  width: 100%;
+}
+
+#Footer_group_1_,
+[id^="PinkFlowerGroup"],
+[id^="BaseGroup"] path,
+[id^="LeafGroup"] path,
+path[id^="Stroke"],
+g[id^="BudGroup"] g[id^="BudGroup"] g[id^="Bud"],
+#Bud8_1_,
+#Bud10_1_,
+#Bud23_1_,
+#Bud26_1_,
+[id^="Dots"],
+[id^="Flourish"] {
+  visibility: hidden;
+}
+
+@media (max-width: 640px) {
+  svg#flower-frame {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .item {
+    position: absolute;
+    width: 200px;
+  }
+
+  .item h1 {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: #f1faee;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .item p {
+    font-size: 0.6rem;
+    color: #e9ecef;
+    text-align: center;
+  }
+}
