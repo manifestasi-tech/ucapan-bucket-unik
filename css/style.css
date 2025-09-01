@@ -48,12 +48,24 @@ body {
   margin-bottom: 15px;
   color: #f1faee;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
 .item p {
   font-size: 1.2rem;
   color: #e9ecef;
   text-align: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.item h1.fade-in {
+  opacity: 1;
+}
+
+.item p.fade-in {
+  opacity: 1;
 }
 
 svg#flower-frame {

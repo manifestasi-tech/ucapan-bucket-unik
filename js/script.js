@@ -395,11 +395,20 @@ function startGSAPAnimation() {
     );
 }
 
+let text_ucapan_header = document.querySelector(".item h1");
+let text_ucapan_desc = document.querySelector(".item p");
+
 document
   .getElementById("tombolMulaiSekarang")
   .addEventListener("click", function (e) {
     e.preventDefault();
     document.querySelector(".container2").style.display = "none";
     document.querySelector(".container").style.display = "flex";
+    let audio = new Audio("/audio/audio.mp3");
+    audio.play();
     startGSAPAnimation();
+    setTimeout(() => {
+      text_ucapan_header.classList.add("fade-in");
+      text_ucapan_desc.classList.add("fade-in");
+    }, 500);
   });
