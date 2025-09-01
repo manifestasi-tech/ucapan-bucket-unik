@@ -1,34 +1,36 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #131b21;
+  overflow: hidden;
 }
 
-/* .container {
-  width: 50%;
-  margin: 0 auto;
-} */
-
-.confetti {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  top: -10px;
-  opacity: 0.7;
-  animation: fall 4s linear infinite;
+.container2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-  }
+.container2 h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #f1faee;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .container {
+  overflow: hidden;
   position: relative;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -55,7 +57,7 @@ body {
 }
 
 svg#flower-frame {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 }
 
@@ -75,14 +77,9 @@ g[id^="BudGroup"] g[id^="BudGroup"] g[id^="Bud"],
 }
 
 @media (max-width: 640px) {
-  svg#flower-frame {
-    height: 100vh;
-    width: 100vw;
-  }
-
   .item {
     position: absolute;
-    width: 200px;
+    width: 300px;
   }
 
   .item h1 {
@@ -94,7 +91,7 @@ g[id^="BudGroup"] g[id^="BudGroup"] g[id^="Bud"],
   }
 
   .item p {
-    font-size: 0.6rem;
+    font-size: 1rem;
     color: #e9ecef;
     text-align: center;
   }
